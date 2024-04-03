@@ -12,7 +12,7 @@ outputs:
   api_response:
     description: 'resonse from API'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: index.js
   pre: setup.js
   pre-if: runner.os == 'linux'
