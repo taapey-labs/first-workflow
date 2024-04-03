@@ -5,11 +5,16 @@ jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
-      - name: echo a string
-        run: echo "Hello first workflow"
+      - name: Checkout latest code
+        uses: action/checkout@v1
 
-  run-shell-command2:
-    runs-on: maxOS
-    steps:
-      - name: echo a string
-        run: echo date
+      - name: call custom action
+        id: call_api
+        uses: ./.github/actions/getvariables
+        with:
+          api_url: 'https://icanhazdadjoke.com/'
+          api_token: 'dsdsdsdsd'
+      - name: run echo
+        run: echo "Hello first workflow"
+      - name: print the outputs
+        run: echo ${{steps.call_api.output.api_response}}
