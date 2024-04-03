@@ -13,7 +13,7 @@ jobs:
         uses: ./.github/actions/getvariables
         with:
           api_url: 'https://icanhazdadjoke.com/'
-          api_token: 'dsdsdsdsd'
+          access_token: 'dsdsdsdsd'
       - name: run echo
         run: echo "Hello first workflow"
       - name: print the outputs
