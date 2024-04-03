@@ -10,7 +10,7 @@ const api_token = core.getInput('api_token');
 console.log('api_url:', api_url);
 // console.log('api_token:', api_token);
 
-const response = axios.get(api_url, {
+const response = await axios.get(api_url, {
   headers: {
     'Authorization': `Bearer ${api_token}`,
     'Content-Type': 'application/json'
