@@ -13,8 +13,8 @@ outputs:
     description: 'resonse from API'
 runs:
   using: 'node20'
-  main: index.js
-  pre: setup.js
+  main: 'dist/index.js'
+  pre: 'setup.js'
   pre-if: runner.os == 'linux'
-  post: cleanup.js
+  post: 'cleanup.js'
   post-if: runner.os == 'linux'
