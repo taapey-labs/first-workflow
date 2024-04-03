@@ -37794,15 +37794,16 @@ const api_token = core.getInput('api_token');
 console.log('api_url:', api_url);
 // console.log('api_token:', api_token);
 
-const response = axios.get(api_url, {
+axios.get(api_url, {
   headers: {
     'Authorization': `Bearer ${api_token}`,
     'Content-Type': 'application/json'
   }
-});
+}).then(response => {
+  console.log(response.data);
+  core.setOutput('response', response.data);
+})
 
-console.log('response:', response);
-core.setOutput(response.data);
 
 core.startGroup('Logging Api response');
 console.log(JSON.stringify(github.context, null, 2));
