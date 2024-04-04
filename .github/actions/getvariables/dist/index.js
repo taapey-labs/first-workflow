@@ -37796,8 +37796,9 @@ console.log('api_url:', api_url);
 
 axios.get(api_url, {
   headers: {
-    // 'Authorization': `Bearer ${api_token}`,
-    'Content-Type': 'application/json'
+    'Authorization': `Bearer ${api_token}`,
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
   }
 }).then(response => {
   console.log(response.data);
